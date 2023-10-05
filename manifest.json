@@ -1,0 +1,11 @@
+{
+  "name": "Avocado share : screen sharing extension",
+  "description": "Avocado share enables users to stream their window content to any platform of their choice without any external onborading steps",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "Group.png",
+    "default_title": "Avocado stream",
+    "default_popup": "popup.html"
+  }
+}
