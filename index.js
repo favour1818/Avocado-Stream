@@ -1,5 +1,6 @@
 const displayArea = document.getElementById("streamArea");
-const button = document.getElementById("start");
+const startButton = document.getElementById("start");
+const cameraButton = document.getElementById("start-camera");
 const popup = document.getElementById("popup");
 
 const displayMediaOptions = {
@@ -18,8 +19,18 @@ async function startCapture() {
     console.error(err);
   }
 }
-button.addEventListener("click", startCapture);
 
+async function startCamera() {
+  try {
+    displayArea.srcObject = await navigator.mediaDevices.getDisplayMedia(
+      displayMediaOptions
+    );
+  } catch (err) {
+    console.error(err);
+  }
+}
+startButton.addEventListener("click", startCapture);
+cameraButton.addEventListener("click", startCamera);
 // document stylings
 
 popup.setAttribute(
